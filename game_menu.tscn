@@ -1,0 +1,160 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5j0e47iw4w8p"]
+
+[ext_resource type="Script" uid="uid://c7igmek46p752" path="res://scripts/game_menu.torch" id="1_jowre"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jowre"]
+bg_color = Color(0.517647, 0.701961, 0.678431, 0.215686)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjxss"]
+bg_color = Color(0.552941, 0, 0, 0.505882)
+
+[node name="Game Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jowre")
+
+[node name="GamePanel" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="UpperLeft" type="Panel" parent="GamePanel"]
+custom_minimum_size = Vector2(142.81, 27.885)
+layout_mode = 2
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 152.81
+offset_bottom = 37.885
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GamePanel/UpperLeft"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Score Label" type="Label" parent="GamePanel/UpperLeft/HBoxContainer"]
+layout_mode = 2
+text = "SCORE:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score Value" type="Label" parent="GamePanel/UpperLeft/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WinPanel" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="WinPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jowre")
+
+[node name="Label" type="Label" parent="WinPanel/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = -36.0
+offset_right = 119.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 35
+text = "YOU WIN!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="WinPanel/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = 73.0
+offset_right = 63.0
+offset_bottom = 105.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CONTINUE"
+
+[node name="LosePanel" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="LosePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rjxss")
+
+[node name="Label" type="Label" parent="LosePanel/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.0
+offset_top = -36.0
+offset_right = 119.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 35
+text = "YOU LOSE :("
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="LosePanel/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = 73.0
+offset_right = 63.0
+offset_bottom = 105.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CONTINUE"
+
+[connection signal="pressed" from="WinPanel/Panel/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="LosePanel/Panel/ContinueButton" to="." method="_on_continue_button_pressed"]

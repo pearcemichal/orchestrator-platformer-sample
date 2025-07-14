@@ -1,0 +1,17 @@
+[orchestration type="OScript" load_steps=3 format=3 uid="uid://ctvjk35psrx7s"]
+
+[obj type="OScriptGraph" id="OScriptGraph_pkg7o"]
+graph_name = &"EventGraph"
+offset = Vector2(-6, -32)
+flags = 8
+
+[obj type="OScriptSignal" id="OScriptSignal_86nn6"]
+method = {
+"name": &"CoinCOllected"
+}
+signal_name = &"CoinCOllected"
+
+[resource]
+base_type = &"Control"
+signals = Array[OScriptSignal]([SubResource("OScriptSignal_86nn6")])
+graphs = Array[OScriptGraph]([SubResource("OScriptGraph_pkg7o")])

@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://wyqcv1iyhbks"]
+
+[ext_resource type="Script" uid="uid://c1oyvr7ay04jw" path="res://scripts/enemy.torch" id="1_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://cge60y5ypqma0" path="res://kenny/Sprites/Characters/Default/character_purple_walk_b.png" id="2_5uy6h"]
+[ext_resource type="Texture2D" uid="uid://cjwepdehvt3l8" path="res://kenny/Sprites/Characters/Default/character_purple_walk_a.png" id="3_c4w8v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hiqwa"]
+size = Vector2(28, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2u3nc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5uy6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c4w8v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ra3w"]
+size = Vector2(34, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5uy6h"]
+size = Vector2(18, 9)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ra3w"]
+radius = 186.043
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_4ra3w")
+movement = Vector2(15, 0)
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 14.5)
+shape = SubResource("RectangleShape2D_hiqwa")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 11)
+scale = Vector2(0.328125, 0.328125)
+sprite_frames = SubResource("SpriteFrames_2u3nc")
+autoplay = "default"
+frame_progress = 0.358589
+
+[node name="Hurtbox" type="Area2D" parent="."]
+position = Vector2(0, 13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_4ra3w")
+
+[node name="Hitbox" type="Area2D" parent="."]
+position = Vector2(0, 13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -14.5)
+shape = SubResource("RectangleShape2D_5uy6h")
+
+[node name="Activation" type="Area2D" parent="."]
+position = Vector2(1, 13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Activation"]
+shape = SubResource("CircleShape2D_4ra3w")
+
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="Activation" to="." method="_on_activation_body_entered"]

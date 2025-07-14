@@ -1,0 +1,91 @@
+[orchestration type="OScript" load_steps=6 format=3 uid="uid://c4ipbylo43wy0"]
+
+[obj type="OScriptFunction" id="OScriptFunction_86nn6"]
+guid = "F06ED828-8D12-4790-94A4-D8A91610E3F0"
+method = {
+"name": &"_on_play_pressed"
+}
+id = 0
+
+[obj type="OScriptGraph" id="OScriptGraph_pl8j0"]
+graph_name = &"EventGraph"
+offset = Vector2(-860, -340.75)
+flags = 8
+nodes = Array[int]([0, 1, 2])
+functions = Array[int]([0])
+
+[obj type="OScriptNodeEvent" id="OScriptNodeEvent_t3lhv"]
+function_id = "F06ED828-8D12-4790-94A4-D8A91610E3F0"
+id = 0
+pin_data = Array[Dictionary]([{
+"pin_name": &"ExecOut",
+"dir": 1,
+"flags": 4
+}])
+
+[obj type="OScriptNodeCallMemberFunction" id="OScriptNodeCallMemberFunction_bo6ce"]
+function_name = &"change_scene_to_file"
+target_class_name = "SceneTree"
+target_type = 24
+flags = 520
+method = {
+"name": &"change_scene_to_file",
+"return": {
+"type": 2,
+"class_name": &"Error",
+"usage": 65542
+},
+"args": [{
+"name": &"path",
+"type": 4
+}]
+}
+chain = false
+id = 1
+position = Vector2(340, 100)
+pin_data = Array[Dictionary]([{
+"pin_name": &"ExecIn",
+"flags": 4
+}, {
+"pin_name": &"ExecOut",
+"dir": 1,
+"flags": 4
+}, {
+"pin_name": &"target",
+"type": 24,
+"flags": 2050,
+"label": "SceneTree",
+"target_class": "SceneTree"
+}, {
+"pin_name": &"path",
+"type": 4,
+"flags": 2,
+"dv": "menu.tscn"
+}, {
+"pin_name": &"return_value",
+"type": 2,
+"dir": 1,
+"flags": 33554434,
+"label": "Error",
+"target_class": "Error",
+"usage": 65542
+}])
+
+[obj type="OScriptNodeSceneTree" id="OScriptNodeSceneTree_ic7a7"]
+id = 2
+position = Vector2(60, 120)
+pin_data = Array[Dictionary]([{
+"pin_name": &"scene_tree",
+"type": 24,
+"dir": 1,
+"flags": 2,
+"target_class": "SceneTree",
+"dv": null
+}])
+
+[resource]
+base_type = &"Control"
+functions = Array[OScriptFunction]([SubResource("OScriptFunction_86nn6")])
+connections = Array[int]([0, 0, 1, 0, 2, 0, 1, 1])
+nodes = Array[OScriptNode]([SubResource("OScriptNodeEvent_t3lhv"), SubResource("OScriptNodeCallMemberFunction_bo6ce"), SubResource("OScriptNodeSceneTree_ic7a7")])
+graphs = Array[OScriptGraph]([SubResource("OScriptGraph_pl8j0")])

@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2jso87n23tmx"]
+
+[ext_resource type="Script" uid="uid://cexrjc03b5jb6" path="res://scripts/menu.torch" id="1_lti8b"]
+[ext_resource type="Texture2D" uid="uid://cpt35mv74ku4n" path="res://kenny/Sprites/Backgrounds/Default/background_clouds.png" id="2_ouk20"]
+
+[sub_resource type="Theme" id="Theme_lti8b"]
+default_font_size = 35
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ouk20"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_lti8b")
+script = ExtResource("1_lti8b")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ouk20")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(793.925, 0)
+autoscroll = Vector2(30, 0)
+repeat_times = 25
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(400, 395)
+scale = Vector2(3.10937, 3.10937)
+texture = ExtResource("2_ouk20")
+
+[node name="Menu" type="Control" parent="."]
+custom_minimum_size = Vector2(333.87, 0)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -121.0
+offset_bottom = -47.84
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Play" type="Button" parent="Menu/HBoxContainer"]
+layout_mode = 2
+text = "PLAY"
+
+[node name="Quit" type="Button" parent="Menu/HBoxContainer"]
+layout_mode = 2
+text = "QUIT"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -327.0
+offset_top = 83.0
+offset_right = 327.0
+offset_bottom = 260.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.757832, 0.856856, 0.790333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 106
+text = "FUN GAME!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Menu/HBoxContainer/Play" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer/Quit" to="." method="_on_quit_pressed"]

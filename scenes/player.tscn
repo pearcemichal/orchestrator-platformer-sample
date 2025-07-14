@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://codsvt26i0uvj"]
+
+[ext_resource type="Script" uid="uid://d0dwl1kx1o7vm" path="res://scripts/player.torch" id="1_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://dse4cbehp6g5y" path="res://kenny/Sprites/Characters/Default/character_green_idle.png" id="2_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://cs1cj2sxvdp73" path="res://kenny/Sprites/Characters/Default/character_green_jump.png" id="3_fjrip"]
+[ext_resource type="Texture2D" uid="uid://c5ym4p74bsx8a" path="res://kenny/Sprites/Characters/Default/character_green_walk_b.png" id="4_smehm"]
+[ext_resource type="Texture2D" uid="uid://btub5jd6e4osl" path="res://kenny/Sprites/Characters/Default/character_green_walk_a.png" id="5_ur7pv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pkg7o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tuyoq")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fjrip")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_smehm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ur7pv")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aqk2v"]
+radius = 9.0
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_qlg0r")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -2)
+scale = Vector2(0.1875, 0.1875)
+sprite_frames = SubResource("SpriteFrames_pkg7o")
+animation = &"walk"
+
+[node name="Collector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collector"]
+shape = SubResource("CircleShape2D_aqk2v")
+
+[connection signal="area_entered" from="Collector" to="." method="_on_collector_area_entered"]

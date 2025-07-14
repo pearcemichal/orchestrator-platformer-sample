@@ -1,0 +1,202 @@
+[orchestration type="OScript" load_steps=9 format=3 uid="uid://bmgvyi7xjpu0v"]
+
+[obj type="OScriptFunction" id="OScriptFunction_86nn6"]
+guid = "420F22CE-B3A7-4B65-A472-9354EDD7DF96"
+method = {
+"name": &"_on_body_entered",
+"args": [{
+"name": &"body",
+"type": 24,
+"class_name": &"Node2D"
+}]
+}
+id = 0
+
+[obj type="OScriptGraph" id="OScriptGraph_r87n5"]
+graph_name = &"EventGraph"
+offset = Vector2(-231.674, -392.248)
+zoom = 0.909091
+flags = 8
+nodes = Array[int]([0, 1, 2, 3, 4, 5])
+functions = Array[int]([0])
+knots = Array[Dictionary]([{
+"id": 72057615529541632,
+"points": PackedVector2Array(340, 240)
+}])
+
+[obj type="OScriptNodeEvent" id="OScriptNodeEvent_t3lhv"]
+function_id = "420F22CE-B3A7-4B65-A472-9354EDD7DF96"
+id = 0
+pin_data = Array[Dictionary]([{
+"pin_name": &"ExecOut",
+"dir": 1,
+"flags": 4
+}, {
+"pin_name": &"body",
+"type": 24,
+"dir": 1,
+"flags": 2,
+"target_class": "Node2D",
+"dv": null
+}])
+
+[obj type="OScriptNodeBranch" id="OScriptNodeBranch_bo6ce"]
+id = 1
+position = Vector2(620, 0)
+pin_data = Array[Dictionary]([{
+"pin_name": &"ExecIn",
+"flags": 516,
+"label": "if [condition]"
+}, {
+"pin_name": &"condition",
+"type": 1,
+"flags": 2,
+"dv": false
+}, {
+"pin_name": &"true",
+"dir": 1,
+"flags": 516
+}, {
+"pin_name": &"false",
+"dir": 1,
+"flags": 516
+}])
+
+[obj type="OScriptNodeCallMemberFunction" id="OScriptNodeCallMemberFunction_ic7a7"]
+function_name = &"is_in_group"
+target_class_name = "Node"
+target_type = 24
+flags = 522
+method = {
+"name": &"is_in_group",
+"return": {
+"type": 1
+},
+"flags": 5,
+"args": [{
+"name": &"group",
+"type": 21
+}]
+}
+chain = false
+id = 2
+position = Vector2(320, 0)
+pin_data = Array[Dictionary]([{
+"pin_name": &"ExecIn",
+"flags": 4
+}, {
+"pin_name": &"ExecOut",
+"dir": 1,
+"flags": 4
+}, {
+"pin_name": &"target",
+"type": 24,
+"flags": 2050,
+"label": "Node",
+"target_class": "Node",
+"dv": null
+}, {
+"pin_name": &"group",
+"type": 21,
+"flags": 2,
+"dv": "player"
+}, {
+"pin_name": &"return_value",
+"type": 1,
+"dir": 1,
+"flags": 1026
+}])
+
+[obj type="OScriptNodeSceneNode" id="OScriptNodeSceneNode_fqfou"]
+node_path = NodePath("%Game Menu")
+target_class_name = "Control"
+id = 3
+position = Vector2(700, 140)
+pin_data = Array[Dictionary]([{
+"pin_name": &"%Game Menu",
+"type": 24,
+"dir": 1,
+"flags": 2050,
+"target_class": "Control",
+"dv": null
+}])
+
+[obj type="OScriptNodeCallMemberFunction" id="OScriptNodeCallMemberFunction_a4y4u"]
+function_name = &"call"
+target_class_name = "Object"
+target_type = 24
+flags = 552
+method = {
+"name": &"call",
+"return": {
+"usage": 131078
+},
+"flags": 17,
+"args": [{
+"name": &"method",
+"type": 21
+}]
+}
+variable_arg_count = 0
+chain = false
+id = 4
+position = Vector2(960, 0)
+pin_data = Array[Dictionary]([{
+"pin_name": &"ExecIn",
+"flags": 4
+}, {
+"pin_name": &"ExecOut",
+"dir": 1,
+"flags": 4
+}, {
+"pin_name": &"target",
+"type": 24,
+"flags": 2050,
+"label": "Object",
+"target_class": "Object",
+"dv": null
+}, {
+"pin_name": &"method",
+"type": 21,
+"flags": 2,
+"dv": "win_game"
+}, {
+"pin_name": &"return_value",
+"dir": 1,
+"flags": 1026,
+"usage": 131078
+}])
+
+[obj type="OScriptNodeCallMemberFunction" id="OScriptNodeCallMemberFunction_n3eqv"]
+function_name = &"queue_free"
+target_class_name = "Node"
+target_type = 24
+flags = 520
+method = {
+"name": &"queue_free"
+}
+chain = false
+id = 5
+position = Vector2(1360, 160)
+pin_data = Array[Dictionary]([{
+"pin_name": &"ExecIn",
+"flags": 4
+}, {
+"pin_name": &"ExecOut",
+"dir": 1,
+"flags": 4
+}, {
+"pin_name": &"target",
+"type": 24,
+"flags": 2050,
+"label": "Node",
+"target_class": "Node",
+"dv": null
+}])
+
+[resource]
+base_type = &"Area2D"
+functions = Array[OScriptFunction]([SubResource("OScriptFunction_86nn6")])
+connections = Array[int]([2, 0, 1, 0, 0, 0, 2, 0, 1, 0, 4, 0, 4, 0, 5, 0, 2, 1, 1, 1, 0, 1, 2, 1, 3, 0, 4, 1, 0, 1, 5, 1])
+nodes = Array[OScriptNode]([SubResource("OScriptNodeEvent_t3lhv"), SubResource("OScriptNodeBranch_bo6ce"), SubResource("OScriptNodeCallMemberFunction_ic7a7"), SubResource("OScriptNodeSceneNode_fqfou"), SubResource("OScriptNodeCallMemberFunction_a4y4u"), SubResource("OScriptNodeCallMemberFunction_n3eqv")])
+graphs = Array[OScriptGraph]([SubResource("OScriptGraph_r87n5")])
