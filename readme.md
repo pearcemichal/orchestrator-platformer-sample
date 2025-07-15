@@ -18,5 +18,5 @@ For this project, I used the *New Platformer Pack* by Kenney, Which I got from O
 
 The pack is licensed as CC0, so the project itself is also CC0. 
 
-[Open Game Art](hhttps://opengameart.org/content/new-platformer-pack). 
-[Kenney Home Page](hhttps://kenney.nl/assets). 
+* [Open Game Art](https://opengameart.org/content/new-platformer-pack). 
+* [Kenney Home Page](https://kenney.nl/assets). 
