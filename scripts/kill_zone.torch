@@ -1,4 +1,4 @@
-[orchestration type="OScript" load_steps=16 format=3 uid="uid://c4ija3lldgoqg"]
+[orchestration type="OScript" load_steps=17 format=3 uid="uid://c4ija3lldgoqg"]
 
 [obj type="OScriptFunction" id="OScriptFunction_274fx"]
 guid = "7FCB8AA7-DEF3-485C-A376-FDECA4083854"
@@ -22,19 +22,21 @@ id = 16
 
 [obj type="OScriptGraph" id="OScriptGraph_2o6r5"]
 graph_name = &"EventGraph"
-offset = Vector2(-58.9609, -562.123)
-zoom = 0.683013
+offset = Vector2(-27.4384, -320.833)
+zoom = 0.90909
 flags = 8
-nodes = Array[int]([0, 5, 6, 10, 11, 17, 18, 19, 20, 21])
+nodes = Array[int]([0, 5, 6, 10, 11, 17, 18, 21, 22, 23, 24])
 functions = Array[int]([0])
 knots = Array[Dictionary]([{
 "id": 72057684249018368,
-"points": PackedVector2Array(680, -240)
+"points": PackedVector2Array(760, 400)
+}, {
+"id": 72057692838952960,
+"points": PackedVector2Array(800, 60)
 }])
 
 [obj type="OScriptGraph" id="OScriptGraph_hiqwa"]
 graph_name = &"whatever"
-offset = Vector2(-860, -340.75)
 flags = 22
 nodes = Array[int]([16])
 functions = Array[int]([16])
@@ -74,7 +76,7 @@ method = {
 }
 chain = false
 id = 5
-position = Vector2(1240, 20)
+position = Vector2(1080, 220)
 pin_data = Array[Dictionary]([{
 "pin_name": &"ExecIn",
 "flags": 4
@@ -87,8 +89,7 @@ pin_data = Array[Dictionary]([{
 "type": 24,
 "flags": 2050,
 "label": "Node",
-"target_class": "Node",
-"dv": null
+"target_class": "Node"
 }, {
 "pin_name": &"group",
 "type": 21,
@@ -98,13 +99,12 @@ pin_data = Array[Dictionary]([{
 "pin_name": &"return_value",
 "type": 1,
 "dir": 1,
-"flags": 1026,
-"dv": false
+"flags": 1026
 }])
 
 [obj type="OScriptNodeBranch" id="OScriptNodeBranch_d14el"]
 id = 6
-position = Vector2(1520, 20)
+position = Vector2(1360, 220)
 pin_data = Array[Dictionary]([{
 "pin_name": &"ExecIn",
 "flags": 516,
@@ -142,7 +142,7 @@ method = {
 }
 chain = false
 id = 10
-position = Vector2(640, -120)
+position = Vector2(420, -120)
 pin_data = Array[Dictionary]([{
 "pin_name": &"ExecIn",
 "flags": 4
@@ -155,8 +155,7 @@ pin_data = Array[Dictionary]([{
 "type": 24,
 "flags": 2050,
 "label": "Node",
-"target_class": "Node",
-"dv": null
+"target_class": "Node"
 }, {
 "pin_name": &"group",
 "type": 21,
@@ -171,7 +170,7 @@ pin_data = Array[Dictionary]([{
 
 [obj type="OScriptNodeBranch" id="OScriptNodeBranch_1ikuy"]
 id = 11
-position = Vector2(920, -120)
+position = Vector2(700, -120)
 pin_data = Array[Dictionary]([{
 "pin_name": &"ExecIn",
 "flags": 516,
@@ -204,14 +203,13 @@ pin_data = Array[Dictionary]([{
 node_path = NodePath("%Game Menu")
 target_class_name = "Control"
 id = 17
-position = Vector2(2260, 100)
+position = Vector2(1580, 300)
 pin_data = Array[Dictionary]([{
 "pin_name": &"%Game Menu",
 "type": 24,
 "dir": 1,
 "flags": 2050,
-"target_class": "Control",
-"dv": null
+"target_class": "Control"
 }])
 
 [obj type="OScriptNodeCallMemberFunction" id="OScriptNodeCallMemberFunction_t3lhv"]
@@ -233,7 +231,7 @@ method = {
 variable_arg_count = 0
 chain = false
 id = 18
-position = Vector2(2500, 20)
+position = Vector2(1820, 220)
 pin_data = Array[Dictionary]([{
 "pin_name": &"ExecIn",
 "flags": 4
@@ -246,8 +244,7 @@ pin_data = Array[Dictionary]([{
 "type": 24,
 "flags": 2050,
 "label": "Object",
-"target_class": "Object",
-"dv": null
+"target_class": "Object"
 }, {
 "pin_name": &"method",
 "type": 21,
@@ -260,49 +257,6 @@ pin_data = Array[Dictionary]([{
 "usage": 131078
 }])
 
-[obj type="OScriptNodeCallBuiltinFunction" id="OScriptNodeCallBuiltinFunction_11l1o"]
-function_name = &"print"
-flags = 33
-method = {
-"name": &"print",
-"flags": 17,
-"args": [{
-"name": &"arg1",
-"usage": 131078
-}]
-}
-variable_arg_count = 0
-id = 19
-position = Vector2(1940, 20)
-pin_data = Array[Dictionary]([{
-"pin_name": &"ExecIn",
-"flags": 4
-}, {
-"pin_name": &"ExecOut",
-"dir": 1,
-"flags": 4
-}, {
-"pin_name": &"arg1",
-"flags": 2,
-"usage": 131078
-}])
-
-[obj type="OScriptNodeComposeFrom" id="OScriptNodeComposeFrom_d14el"]
-id = 20
-position = Vector2(1620, 200)
-pin_data = Array[Dictionary]([{
-"pin_name": &"from",
-"type": 4,
-"flags": 2,
-"dv": "DEATH"
-}, {
-"pin_name": &"value",
-"type": 4,
-"dir": 1,
-"flags": 2,
-"dv": ""
-}])
-
 [obj type="OScriptNodeCallMemberFunction" id="OScriptNodeCallMemberFunction_mae5d"]
 function_name = &"queue_free"
 target_class_name = "Node"
@@ -313,7 +267,40 @@ method = {
 }
 chain = false
 id = 21
-position = Vector2(2880, -160)
+position = Vector2(2280, 320)
+pin_data = Array[Dictionary]([{
+"pin_name": &"ExecIn",
+"flags": 4
+}, {
+"pin_name": &"ExecOut",
+"dir": 1,
+"flags": 4
+}, {
+"pin_name": &"target",
+"type": 24,
+"flags": 2050,
+"label": "Node",
+"target_class": "Node"
+}])
+
+[obj type="OScriptNodeComment" id="OScriptNodeComment_86nn6"]
+comments = "If something other than the player falls, we should still remove it. 
+We dont want stuff just falling forever, right?"
+id = 22
+size = Vector2(860, 240)
+position = Vector2(400, -220)
+
+[obj type="OScriptNodeCallMemberFunction" id="OScriptNodeCallMemberFunction_bo6ce"]
+function_name = &"queue_free"
+target_class_name = "Node"
+target_type = 24
+flags = 520
+method = {
+"name": &"queue_free"
+}
+chain = false
+id = 23
+position = Vector2(1080, -160)
 pin_data = Array[Dictionary]([{
 "pin_name": &"ExecIn",
 "flags": 4
@@ -330,9 +317,15 @@ pin_data = Array[Dictionary]([{
 "dv": null
 }])
 
+[obj type="OScriptNodeComment" id="OScriptNodeComment_5uy6h"]
+comments = "If the player fall,s in addition to just removing them, we will call the \"end_game\" method on the Game Menu node, which we access using a unique name"
+id = 24
+size = Vector2(1420, 320)
+position = Vector2(1040, 120)
+
 [resource]
 base_type = &"Area2D"
 functions = Array[OScriptFunction]([SubResource("OScriptFunction_274fx"), SubResource("OScriptFunction_70uel")])
-connections = Array[int]([11, 1, 5, 0, 5, 0, 6, 0, 0, 0, 10, 0, 10, 0, 11, 0, 19, 0, 18, 0, 6, 0, 19, 0, 18, 0, 21, 0, 0, 1, 5, 1, 5, 1, 6, 1, 0, 1, 10, 1, 10, 1, 11, 1, 17, 0, 18, 1, 20, 0, 19, 1, 0, 1, 21, 1])
-nodes = Array[OScriptNode]([SubResource("OScriptNodeEvent_w4gqu"), SubResource("OScriptNodeCallMemberFunction_11l1o"), SubResource("OScriptNodeBranch_d14el"), SubResource("OScriptNodeCallMemberFunction_d14el"), SubResource("OScriptNodeBranch_1ikuy"), SubResource("OScriptNodeFunctionEntry_ikiii"), SubResource("OScriptNodeSceneNode_86nn6"), SubResource("OScriptNodeCallMemberFunction_t3lhv"), SubResource("OScriptNodeCallBuiltinFunction_11l1o"), SubResource("OScriptNodeComposeFrom_d14el"), SubResource("OScriptNodeCallMemberFunction_mae5d")])
+connections = Array[int]([11, 1, 5, 0, 5, 0, 6, 0, 0, 0, 10, 0, 10, 0, 11, 0, 6, 0, 18, 0, 18, 0, 21, 0, 11, 0, 23, 0, 0, 1, 5, 1, 5, 1, 6, 1, 0, 1, 10, 1, 10, 1, 11, 1, 17, 0, 18, 1, 0, 1, 21, 1, 0, 1, 23, 1])
+nodes = Array[OScriptNode]([SubResource("OScriptNodeEvent_w4gqu"), SubResource("OScriptNodeCallMemberFunction_11l1o"), SubResource("OScriptNodeBranch_d14el"), SubResource("OScriptNodeCallMemberFunction_d14el"), SubResource("OScriptNodeBranch_1ikuy"), SubResource("OScriptNodeFunctionEntry_ikiii"), SubResource("OScriptNodeSceneNode_86nn6"), SubResource("OScriptNodeCallMemberFunction_t3lhv"), SubResource("OScriptNodeCallMemberFunction_mae5d"), SubResource("OScriptNodeComment_86nn6"), SubResource("OScriptNodeCallMemberFunction_bo6ce"), SubResource("OScriptNodeComment_5uy6h")])
 graphs = Array[OScriptGraph]([SubResource("OScriptGraph_2o6r5"), SubResource("OScriptGraph_hiqwa")])

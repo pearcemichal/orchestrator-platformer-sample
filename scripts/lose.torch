@@ -9,7 +9,7 @@ id = 0
 
 [obj type="OScriptGraph" id="OScriptGraph_pl8j0"]
 graph_name = &"EventGraph"
-offset = Vector2(-860, -340.75)
+offset = Vector2(-718, -461)
 flags = 8
 nodes = Array[int]([0, 1, 2])
 functions = Array[int]([0])
@@ -79,8 +79,7 @@ pin_data = Array[Dictionary]([{
 "type": 24,
 "dir": 1,
 "flags": 2,
-"target_class": "SceneTree",
-"dv": null
+"target_class": "SceneTree"
 }])
 
 [resource]

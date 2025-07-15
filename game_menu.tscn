@@ -19,6 +19,7 @@ script = ExtResource("1_jowre")
 
 [node name="GamePanel" type="Control" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 anchors_preset = 0
 anchor_right = 1.0
@@ -107,6 +108,7 @@ text = "CONTINUE"
 
 [node name="LosePanel" type="Control" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

@@ -14,8 +14,7 @@ id = 0
 
 [obj type="OScriptGraph" id="OScriptGraph_r87n5"]
 graph_name = &"EventGraph"
-offset = Vector2(-231.674, -392.248)
-zoom = 0.909091
+zoom = 0.826446
 flags = 8
 nodes = Array[int]([0, 1, 2, 3, 4, 5])
 functions = Array[int]([0])
@@ -36,8 +35,7 @@ pin_data = Array[Dictionary]([{
 "type": 24,
 "dir": 1,
 "flags": 2,
-"target_class": "Node2D",
-"dv": null
+"target_class": "Node2D"
 }])
 
 [obj type="OScriptNodeBranch" id="OScriptNodeBranch_bo6ce"]
@@ -93,8 +91,7 @@ pin_data = Array[Dictionary]([{
 "type": 24,
 "flags": 2050,
 "label": "Node",
-"target_class": "Node",
-"dv": null
+"target_class": "Node"
 }, {
 "pin_name": &"group",
 "type": 21,
@@ -117,8 +114,7 @@ pin_data = Array[Dictionary]([{
 "type": 24,
 "dir": 1,
 "flags": 2050,
-"target_class": "Control",
-"dv": null
+"target_class": "Control"
 }])
 
 [obj type="OScriptNodeCallMemberFunction" id="OScriptNodeCallMemberFunction_a4y4u"]
@@ -153,8 +149,7 @@ pin_data = Array[Dictionary]([{
 "type": 24,
 "flags": 2050,
 "label": "Object",
-"target_class": "Object",
-"dv": null
+"target_class": "Object"
 }, {
 "pin_name": &"method",
 "type": 21,
@@ -190,8 +185,7 @@ pin_data = Array[Dictionary]([{
 "type": 24,
 "flags": 2050,
 "label": "Node",
-"target_class": "Node",
-"dv": null
+"target_class": "Node"
 }])
 
 [resource]
